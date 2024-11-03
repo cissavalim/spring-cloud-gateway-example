@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: hello-world
+          uri: https://httpbin.org
+          predicates:
+            - Path=/hello
+            - Method=GET
+          filters:
+            - SetPath=/get
